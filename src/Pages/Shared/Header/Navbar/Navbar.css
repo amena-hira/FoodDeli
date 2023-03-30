@@ -1,0 +1,15 @@
+.logo{
+    width: 4rem;
+}
+nav a.nav-link{
+    letter-spacing: 0.0375rem;
+    cursor: pointer;
+}
+.navbar-nav>li>a{
+    margin: 0 0.75rem;
+    border-top: 0.1875rem solid rgba(255, 255, 255, 0);
+}
+
+.navbar-nav>li>a:hover, .navbar-nav>li>a.active:focus{
+    border-top: 0.1875rem solid #B61A0D;
+}
