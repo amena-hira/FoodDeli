@@ -1,0 +1,20 @@
+.about-us{
+    justify-content: center;
+    align-items: center;
+}
+.divider{
+    width: 5.7rem;
+    height: 0.2rem;
+    background-color: #dc3545;
+}
+.about-img>img{
+    height: 26rem;
+}
+.about-slider>.slick-slider>.slick-arrow{
+    display: none !important;
+}
+@media only screen and (max-width: 576px)  {
+    .about-us{
+        gap: 2rem;
+    }
+}

@@ -98,37 +98,40 @@ const Dishes = () => {
         cssEase: "linear",
         responsive: [
             {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 4,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: true
-              }
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
             },
             {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 2,
-                initialSlide: 2
-              }
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
             },
             {
-              breakpoint: 480,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 2
-              }
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 2
+                }
             }
-          ]
+        ]
     };
     return (
         <Container className='my-5'>
-            <h2 className='h2 fw-bolder text-center my-5'>Popular Dishes</h2>
+            <div className='my-5'>
+                <h2 className='h2 fw-bolder text-center '>Popular Dishes</h2>
+                <p className='text-secondary text-center'>Exciting dishes are going on, Check it and grab it!</p>
+            </div>
             <div>
                 <Slider {...settings} >
-                    {dishData.map(dish=> <div> <DishCarousel dish={dish}></DishCarousel></div>)}
+                    {dishData.map(dish => <div> <DishCarousel dish={dish}></DishCarousel></div>)}
                 </Slider>
             </div>
         </Container>

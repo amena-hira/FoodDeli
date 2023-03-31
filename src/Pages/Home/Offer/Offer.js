@@ -40,7 +40,10 @@ const Offer = () => {
     ]
     return (
         <Container className='my-5 py-1'>
-            <h2 className='my-5 text-center fw-bolder'>Explore Offers</h2>
+            <div className='my-5'>
+                <h2 className='text-center fw-bolder'>Explore Offers</h2>
+            </div>
+
             <Row xs={1} md={2} lg={4} className="g-4">
                 {cardData.map((data, idx) => (
                     <Col>
@@ -49,10 +52,7 @@ const Offer = () => {
                             <Card.Img src={data.image} alt="Card image" />
                             <Card.ImgOverlay className='text-white'>
 
-                                <Card.Title> <Badge className='fw-lighter' bg="white text-secondary">{data.label}</Badge> </Card.Title>
-                                {/* <Card.Subtitle> subtitle </Card.Subtitle>
-                                <Card.Subtitle> path </Card.Subtitle>
-                                <Card.Subtitle> date </Card.Subtitle> */}
+                                <Card.Title> <Badge className='fw-lighter' bg="white text-danger">{data.label}</Badge> </Card.Title>
                                 <Card.Body className='pt-5'>
                                     <Card.Title className='body-title pt-3'> {data.title} </Card.Title>
                                     <Card.Subtitle className='py-2'> {data.message} </Card.Subtitle>

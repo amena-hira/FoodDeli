@@ -158,8 +158,8 @@ const Brands = () => {
         ]
     };
     return (
-        <Container className='my-5 brands py-1'>
-            <div className='my-5'>
+        <Container className='my-5 brands'>
+            <div className='my-5 pt-4'>
                 <h2 className='h2 fw-bolder text-center'>Popular Brands</h2>
                 <p className='text-secondary text-center'>Top restaurants, cafes, pubs, and bars in Mumbai, based on trends</p>
             </div>

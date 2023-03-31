@@ -33,7 +33,7 @@
     text-transform: uppercase;
     text-align: center;
 }
-.main-info h1,p{
+.main-info> h1,.main-info>p{
     color: white;
 }
 .main-info p{

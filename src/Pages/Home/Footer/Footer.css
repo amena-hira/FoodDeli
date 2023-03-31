@@ -1,0 +1,7 @@
+.footer-row{
+    gap: 2.2rem;
+}
+.footer-column>.nav-item>.nav-link{
+    margin: 0 !important;
+    border-top: none !important;
+}

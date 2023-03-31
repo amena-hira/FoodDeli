@@ -1,0 +1,16 @@
+.member{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.member-divider{
+    background-color: #5a5a5a !important;
+}
+.account-btn{
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
