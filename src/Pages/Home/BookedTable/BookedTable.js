@@ -18,7 +18,7 @@ const BookedTable = () => {
 
     const getData = (id) => {
         setBookedId(id)
-        fetch(`http://localhost:5000/tableBooked/${id}`)
+        fetch(`https://delivery-landing-page-server.vercel.app/tableBooked/${id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)

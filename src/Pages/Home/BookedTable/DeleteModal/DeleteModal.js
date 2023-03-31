@@ -8,7 +8,7 @@ const DeleteModal = (props) => {
     const navigate = useNavigate();
     const deleteData = (id) => {
         // setModalShow(true)
-        fetch(`http://localhost:5000/tableBooked/${id}`, {
+        fetch(`https://delivery-landing-page-server.vercel.app/tableBooked/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

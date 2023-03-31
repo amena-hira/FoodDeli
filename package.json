@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/react": "^18.0.31",
     "bootstrap": "^5.2.3",
+    "firebase": "^9.19.0",
     "jquery": "^3.6.4",
     "lightbox.js-react": "^0.4.7",
     "localforage": "^1.10.0",

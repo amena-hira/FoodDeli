@@ -27,7 +27,7 @@ const EditModal = (props) => {
             personList
         }
 
-        fetch(`http://localhost:5000/tableBooked/${bookedTable._id}`, {
+        fetch(`https://delivery-landing-page-server.vercel.app/tableBooked/${bookedTable._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

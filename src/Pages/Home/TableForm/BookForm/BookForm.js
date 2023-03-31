@@ -31,7 +31,7 @@ const BookForm = () => {
         }
         console.log(bookedTable)
 
-        fetch('http://localhost:5000/tableBooked', {
+        fetch('https://delivery-landing-page-server.vercel.app/tableBooked', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

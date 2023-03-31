@@ -11,7 +11,7 @@ function NavbarBot() {
         <Container>
             <Navbar bg="white" expand="lg">
 
-                <Navbar.Brand href="#"><img className='logo' src={logo} alt="" /></Navbar.Brand>
+                <Navbar.Brand href="#" className='d-flex justify-content-center align-items-center'><img className='logo' src={logo} alt="" /><h2>Food<span className='text-danger'>DELI</span></h2></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
