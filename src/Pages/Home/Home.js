@@ -9,6 +9,7 @@ import Member from './Member/Member';
 import Footer from './Footer/Footer';
 import Gallery from './Gallery/Gallery';
 import TableForm from './TableForm/TableForm';
+import BookedTable from './BookedTable/BookedTable';
 
 const Home = () => {
     return (
@@ -22,6 +23,7 @@ const Home = () => {
             <div className='pt-5 pb-3'>
                 <TableForm></TableForm>
             </div>
+            <BookedTable></BookedTable>
             <div className='my-5 pt-3 pb-5'>
                 <div className='pb-4'>
                     <h1 className='text-center'>Gallery</h1>
