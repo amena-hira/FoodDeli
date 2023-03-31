@@ -15,6 +15,9 @@ const Home = () => {
     return (
         <>
             <Header></Header>
+            {/* <div className='bg-black'>
+            
+            </div> */}
             <Dishes></Dishes>
             <div className='offer pb-1'>
                 <Offer></Offer>
@@ -27,7 +30,8 @@ const Home = () => {
             <div className='my-5 pt-3 pb-5'>
                 <div className='pb-4'>
                     <h1 className='text-center'>Gallery</h1>
-                    <p className='text-center'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br /><span className='text-danger'>Click On the image to see the Full image</span></p>
+                    <p className='text-center'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <h1 className='fw-bolder text-danger text-center'>Click On the image to see the Full image</h1>
                 </div>
                 <Gallery></Gallery>
             </div>

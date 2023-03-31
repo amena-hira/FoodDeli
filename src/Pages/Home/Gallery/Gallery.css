@@ -1,15 +1,5 @@
-/* .gallery-container{
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
-}
-.image-gallery{
-    display: flex;
-    justify-content: space-around;
-    column-gap: 0.3rem;
-} */
 .image-gallery img{
-    width: 18rem;
+    width: 10rem;
 }
 .gallery-container{
     display: flex;

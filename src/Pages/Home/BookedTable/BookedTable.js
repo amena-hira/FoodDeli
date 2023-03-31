@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Container } from 'react-bootstrap';
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { Badge, Container } from 'react-bootstrap';
+import { useLoaderData } from 'react-router-dom';
 import EditModal from './EditModal/EditModal';
 import { FiEdit } from "react-icons/fi";
 import { FcDeleteRow } from "react-icons/fc";
-import toast from 'react-hot-toast';
 import DeleteModal from './DeleteModal/DeleteModal';
 
 const BookedTable = () => {
@@ -40,7 +39,9 @@ const BookedTable = () => {
                     ''
                     :
                     <Container className='my-5 px-5'>
-                        <h2 className='text-center mb-4'>BOOKED TABLE INFORMATION</h2>
+                        <h2 className='text-center mb-4'>BOOKED TABLE INFORMATION<sup className='fs-6'><Badge className='ms-2' bg="warning fw-lighter" pill>
+                            CRUD
+                        </Badge></sup></h2>
                         <div className='table-responsive'>
                             <table class="table table-bordered table-striped text-center">
                                 <thead>

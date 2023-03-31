@@ -6,8 +6,8 @@
     border-radius: 5px;
     padding: 1px;
 }
-@media only screen and (max-width: 576px)  {
-    .brands>.slick-slider> .slick-arrow{
+@media only screen and (max-width: 768px)  {
+    .brands-slider>.slick-slider>.slick-arrow{
         display: none !important;
     }
 }

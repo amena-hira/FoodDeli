@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Row from 'react-bootstrap/Row';
+import React from 'react';
+import { Badge } from 'react-bootstrap';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 const BookForm = () => {
-    const [validated, setValidated] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
@@ -49,7 +44,9 @@ const BookForm = () => {
     };
     return (
         <div>
-            <h2>Book A Table</h2>
+            <p className='d-flex align-items-center'><span className='h2'>Book A Table</span> <Badge className='ms-2' bg="warning fw-lighter" pill>
+                    CRUD
+                </Badge></p>
             <form class="row g-3" onSubmit={handleSubmit}>
                 <div class="col-md-6">
                     <label for="inputEmail4" class="form-label">Full Name</label>

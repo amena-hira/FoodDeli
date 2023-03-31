@@ -124,7 +124,7 @@ const Brands = () => {
         infinite: true,
         speed: 500,
         slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToScroll: 2,
         initialSlide: 0,
         prevArrow: <SlickArrowLeft />,
         nextArrow: <SlickArrowRight />,
@@ -135,6 +135,15 @@ const Brands = () => {
                     slidesToShow: 2,
                     slidesToScroll: 2,
                     infinite: true,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: true,
                 }
             },
             {
@@ -163,7 +172,7 @@ const Brands = () => {
                 <h2 className='h2 fw-bolder text-center'>Popular Brands</h2>
                 <p className='text-secondary text-center'>Top restaurants, cafes, pubs, and bars in Mumbai, based on trends</p>
             </div>
-            <div>
+            <div className='brands-slider'>
                 <Slider {...settings}>
                     {brandsData.map(brands => <div> <Brand brands={brands}></Brand></div>)}
                 </Slider>

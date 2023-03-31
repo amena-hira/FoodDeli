@@ -12,6 +12,7 @@ import dish5 from '../../../images/dishes//5.jpg';
 import dish6 from '../../../images/dishes/6.jpg';
 import dish7 from '../../../images/dishes/7.jpg';
 import dish8 from '../../../images/dishes/8.jpg';
+import './Dishes.css';
 
 const Dishes = () => {
     const dishData = [
@@ -129,7 +130,7 @@ const Dishes = () => {
                 <h2 className='h2 fw-bolder text-center '>Popular Dishes</h2>
                 <p className='text-secondary text-center'>Exciting dishes are going on, Check it and grab it!</p>
             </div>
-            <div>
+            <div className='dishes-slider'>
                 <Slider {...settings} >
                     {dishData.map(dish => <div> <DishCarousel dish={dish}></DishCarousel></div>)}
                 </Slider>

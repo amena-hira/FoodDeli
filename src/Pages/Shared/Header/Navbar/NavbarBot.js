@@ -27,13 +27,13 @@ function NavbarBot() {
                             <Nav.Link>Offers</Nav.Link>
                         </LinkContainer>
                         <NavDropdown title="Restaurant" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#action3">Restaurant</NavDropdown.Item>
+                            <NavDropdown.Item href="#action3">Indian Restaurant</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">
-                                Another action
+                                American Restaurant
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action5">
-                                Something else here
+                                Italian Restaurant
                             </NavDropdown.Item>
                         </NavDropdown>
                         <LinkContainer to=''>
