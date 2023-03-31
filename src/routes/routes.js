@@ -5,6 +5,7 @@ import NotFound from "../Pages/Shared/Header/NotFound/NotFound";
 const routes = createBrowserRouter([
     {
         path: '/',
+        loader:() => fetch('http://localhost:5000/tableBooked'),
         element: <Main></Main>
     },
     {

@@ -4,18 +4,56 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
+import { useNavigate } from 'react-router-dom';
 
 const BookForm = () => {
     const [validated, setValidated] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
-        const form = event.currentTarget;
+        // const form = event.currentTarget;
+        const form = event.target;
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
         }
+        else {
+            event.preventDefault();
+            const name = event.target.fullName.value;
+            const email = event.target.email.value;
+            const mobile = event.target.mobile.value;
+            const date = event.target.date.value;
+            const restaurantName = event.target.restaurantName.value;
+            const personList = event.target.personList.value;
+            console.log(name, email, mobile, date, restaurantName, personList);
+            const bookedTable = {
+                name,
+                email,
+                mobile,
+                date,
+                restaurantName,
+                personList
+            }
+            setValidated(true);
 
-        setValidated(true);
+            fetch('http://localhost:5000/tableBooked', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(bookedTable)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    window.location.reload();
+                })
+            
+        }
+
+
+
+
     };
     return (
         <div>
@@ -27,7 +65,8 @@ const BookForm = () => {
                         <Form.Control
                             required
                             type="text"
-                            placeholder="First name"
+                            name='fullName'
+                            placeholder="Full name"
                             defaultValue="Hira"
                         />
                         <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -37,13 +76,14 @@ const BookForm = () => {
                         <InputGroup hasValidation>
                             <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
                             <Form.Control
-                                type="text"
+                                type="email"
+                                name='email'
                                 placeholder="Email Address"
                                 aria-describedby="inputGroupPrepend"
                                 required
                             />
                             <Form.Control.Feedback type="invalid">
-                                Please choose a username.
+                                Please provide a email.
                             </Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>
@@ -51,16 +91,32 @@ const BookForm = () => {
                 <Row className="mb-3">
                     <Form.Group as={Col} md="6" controlId="validationCustom03">
                         <Form.Label>Mobile Number</Form.Label>
-                        <Form.Control type="text" placeholder="Mobile Number" required />
+                        <Form.Control type="text" name='mobile' placeholder="Mobile Number" required />
                         <Form.Control.Feedback type="invalid">
-                            Please provide a valid city.
+                            Please provide a valid mobile number.
                         </Form.Control.Feedback>
                     </Form.Group>
                     <Form.Group as={Col} md="6" controlId="validationCustom04">
                         <Form.Label>Date And Time</Form.Label>
-                        <Form.Control type="text" placeholder="Date And Time" required />
+                        <Form.Control type="date" name='date' placeholder="Date And Time" required />
                         <Form.Control.Feedback type="invalid">
-                            Please provide a valid state.
+                            Please provide a valid time.
+                        </Form.Control.Feedback>
+                    </Form.Group>
+                </Row>
+                <Row className="mb-3">
+                    <Form.Group as={Col} md="6" controlId="validationCustom03">
+                        <Form.Label>Restaurant Name</Form.Label>
+                        <Form.Control type="text" name='restaurantName' placeholder="Restaurant Name" required />
+                        <Form.Control.Feedback type="invalid">
+                            Please provide a valid restaurant name.
+                        </Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group as={Col} md="6" controlId="validationCustom04">
+                        <Form.Label>How many Person</Form.Label>
+                        <Form.Control type="number" name='personList' placeholder="Person Number" required />
+                        <Form.Control.Feedback type="invalid">
+                            Please provide a valid number.
                         </Form.Control.Feedback>
                     </Form.Group>
                 </Row>
@@ -73,7 +129,7 @@ const BookForm = () => {
                     />
                 </Form.Group>
                 <div className='text-end'>
-                    <Button type="submit" className='btn-danger'>Submit form</Button>
+                    <Button type="submit" className='btn-danger'>Submit</Button>
                 </div>
             </Form>
         </div>
