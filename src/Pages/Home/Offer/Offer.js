@@ -39,7 +39,7 @@ const Offer = () => {
 
     ]
     return (
-        <Container className='my-5'>
+        <Container className='my-5 py-1'>
             <h2 className='my-5 text-center fw-bolder'>Explore Offers</h2>
             <Row xs={1} md={2} lg={4} className="g-4">
                 {cardData.map((data, idx) => (

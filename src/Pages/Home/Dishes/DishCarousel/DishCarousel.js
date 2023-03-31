@@ -11,7 +11,7 @@ const DishCarousel = ({ dish }) => {
                 src={dish.img}
                 roundedCircle
             />
-            <Figure.Caption className='text-center text-black'>
+            <Figure.Caption className='text-center text-danger fs-6 fw-bold'>
                 {dish.dishName}
             </Figure.Caption>
             <Figure.Caption className='text-center text-black'>
