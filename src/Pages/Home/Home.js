@@ -7,6 +7,7 @@ import './Home.css'
 import About from './About/About';
 import Member from './Member/Member';
 import Footer from './Footer/Footer';
+import Gallery from './Gallery/Gallery';
 
 const Home = () => {
     return (
@@ -17,6 +18,13 @@ const Home = () => {
                 <Offer></Offer>
             </div>
             <Brands></Brands>
+            <div className='my-5 pt-3 pb-5'>
+                <div className='pb-4'>
+                    <h1 className='text-center'>Gallery</h1>
+                    <p className='text-center'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br /><span className='text-danger'>Click On the image to see the Full image</span></p>
+                </div>
+                <Gallery></Gallery>
+            </div>
             <div className='offer'>
                 <About></About>
             </div>
