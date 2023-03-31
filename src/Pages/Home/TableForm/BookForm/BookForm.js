@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
+import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 const BookForm = () => {
@@ -11,127 +12,74 @@ const BookForm = () => {
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
-        // const form = event.currentTarget;
+        event.preventDefault()
         const form = event.target;
-        if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
+        const name = form.name.value;
+        const email = form.email.value;
+        const mobile = form.mobile.value;
+        const date = form.date.value;
+        const restaurantName = form.restaurantName.value;
+        const personList = form.personList.value;
+        console.log(name, email, mobile, date, restaurantName, personList);
+        const bookedTable = {
+            name,
+            email,
+            mobile,
+            date,
+            restaurantName,
+            personList
         }
-        else {
-            event.preventDefault();
-            const name = event.target.fullName.value;
-            const email = event.target.email.value;
-            const mobile = event.target.mobile.value;
-            const date = event.target.date.value;
-            const restaurantName = event.target.restaurantName.value;
-            const personList = event.target.personList.value;
-            console.log(name, email, mobile, date, restaurantName, personList);
-            const bookedTable = {
-                name,
-                email,
-                mobile,
-                date,
-                restaurantName,
-                personList
-            }
-            setValidated(true);
+        console.log(bookedTable)
 
-            fetch('http://localhost:5000/tableBooked', {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(bookedTable)
+        fetch('http://localhost:5000/tableBooked', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(bookedTable)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast.success('Your booking successfully done!!!')
+                form.reset();
+                navigate('/')
             })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    window.location.reload();
-                })
-            
-        }
-
-
-
 
     };
     return (
         <div>
             <h2>Book A Table</h2>
-            <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                <Row className="mb-3">
-                    <Form.Group as={Col} md="6" controlId="validationCustom01">
-                        <Form.Label>Full name</Form.Label>
-                        <Form.Control
-                            required
-                            type="text"
-                            name='fullName'
-                            placeholder="Full name"
-                            defaultValue="Hira"
-                        />
-                        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    </Form.Group>
-                    <Form.Group as={Col} md="6" controlId="validationCustomUsername">
-                        <Form.Label>Email Address</Form.Label>
-                        <InputGroup hasValidation>
-                            <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
-                            <Form.Control
-                                type="email"
-                                name='email'
-                                placeholder="Email Address"
-                                aria-describedby="inputGroupPrepend"
-                                required
-                            />
-                            <Form.Control.Feedback type="invalid">
-                                Please provide a email.
-                            </Form.Control.Feedback>
-                        </InputGroup>
-                    </Form.Group>
-                </Row>
-                <Row className="mb-3">
-                    <Form.Group as={Col} md="6" controlId="validationCustom03">
-                        <Form.Label>Mobile Number</Form.Label>
-                        <Form.Control type="text" name='mobile' placeholder="Mobile Number" required />
-                        <Form.Control.Feedback type="invalid">
-                            Please provide a valid mobile number.
-                        </Form.Control.Feedback>
-                    </Form.Group>
-                    <Form.Group as={Col} md="6" controlId="validationCustom04">
-                        <Form.Label>Date And Time</Form.Label>
-                        <Form.Control type="date" name='date' placeholder="Date And Time" required />
-                        <Form.Control.Feedback type="invalid">
-                            Please provide a valid time.
-                        </Form.Control.Feedback>
-                    </Form.Group>
-                </Row>
-                <Row className="mb-3">
-                    <Form.Group as={Col} md="6" controlId="validationCustom03">
-                        <Form.Label>Restaurant Name</Form.Label>
-                        <Form.Control type="text" name='restaurantName' placeholder="Restaurant Name" required />
-                        <Form.Control.Feedback type="invalid">
-                            Please provide a valid restaurant name.
-                        </Form.Control.Feedback>
-                    </Form.Group>
-                    <Form.Group as={Col} md="6" controlId="validationCustom04">
-                        <Form.Label>How many Person</Form.Label>
-                        <Form.Control type="number" name='personList' placeholder="Person Number" required />
-                        <Form.Control.Feedback type="invalid">
-                            Please provide a valid number.
-                        </Form.Control.Feedback>
-                    </Form.Group>
-                </Row>
-                <Form.Group className="mb-3">
-                    <Form.Check
-                        required
-                        label="Agree to terms and conditions"
-                        feedback="You must agree before submitting."
-                        feedbackType="invalid"
-                    />
-                </Form.Group>
-                <div className='text-end'>
-                    <Button type="submit" className='btn-danger'>Submit</Button>
+            <form class="row g-3" onSubmit={handleSubmit}>
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Full Name</label>
+                    <input type="text" name='name' class="form-control" id="inputEmail4" required />
                 </div>
-            </Form>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Email</label>
+                    <input type="email" name='email' class="form-control" id="inputPassword4" required />
+                </div>
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Mobile Number</label>
+                    <input type="number" name='mobile' class="form-control" id="inputEmail4" required />
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Date And Time</label>
+                    <input type="date" name='date' class="form-control" id="inputPassword4" required />
+                </div>
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Restaurant Name</label>
+                    <input type="text" name='restaurantName' class="form-control" id="inputEmail4" required />
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">How many Person?</label>
+                    <input type="number" name='personList' class="form-control" id="inputPassword4" required />
+                </div>
+
+                <div class="col-12 text-end">
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                </div>
+            </form>
         </div>
     );
 };
