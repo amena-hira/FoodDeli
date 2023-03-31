@@ -8,6 +8,7 @@ import About from './About/About';
 import Member from './Member/Member';
 import Footer from './Footer/Footer';
 import Gallery from './Gallery/Gallery';
+import TableForm from './TableForm/TableForm';
 
 const Home = () => {
     return (
@@ -18,6 +19,9 @@ const Home = () => {
                 <Offer></Offer>
             </div>
             <Brands></Brands>
+            <div className='pt-5 pb-3'>
+                <TableForm></TableForm>
+            </div>
             <div className='my-5 pt-3 pb-5'>
                 <div className='pb-4'>
                     <h1 className='text-center'>Gallery</h1>
