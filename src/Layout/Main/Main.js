@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from '../../Pages/Shared/Header/Header';
+import Home from '../../Pages/Home/Home';
 
 const Main = () => {
     return (
         <>
-            <Header></Header>
+            <Home></Home>
         </>
     );
 };

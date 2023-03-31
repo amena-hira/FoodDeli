@@ -1,10 +1,13 @@
 import React from 'react';
-import Navbar from './Navbar/Navbar';
+import HeaderContain from './HeaderContain';
+import NavbarBot from './Navbar/NavbarBot';
+
 const header = () => {
     return (
-        <div>
-            <Navbar></Navbar>
-        </div>
+        <>
+            <NavbarBot></NavbarBot>
+            <HeaderContain></HeaderContain>
+        </>
     );
 };
 
